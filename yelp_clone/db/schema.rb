@@ -24,4 +24,9 @@ ActiveRecord::Schema.define(version: 20151123154711) do
     t.text     "description"
   end
 
+  create_table "students", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.string  "name"
+  end
+
 end
