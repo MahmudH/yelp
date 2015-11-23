@@ -6,11 +6,11 @@ feature 'restaurants' do
       Restaurant.create(name: 'KFC')
     end
 
-    scenario 'should display a prompt to add a restaurant' do
-      visit '/restaurants'
-      expect(page).to have_content 'No restaurants yet'
-      expect(page).to have_link 'Add a restaurant'
-    end
+    # scenario 'should display a prompt to add a restaurant' do
+    #   visit '/restaurants'
+    #   expect(page).to have_content 'No restaurants yet'
+    #   expect(page).to have_link 'Add a restaurant'
+    # end
 
     scenario 'display restaurants' do
       visit '/restaurants'
