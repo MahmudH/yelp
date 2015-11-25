@@ -8,13 +8,12 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    Restaurant.new(restaurant_params)
+    @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      redirect_to restaurant_path
+      redirect_to restaurants_path
     else
       render 'new'
     end
-    redirect_to '/restaurants'
   end
 
   def restaurant_params
