@@ -62,7 +62,7 @@ feature 'User can sign in and out' do
       click_link 'Add a restaurant'
       fill_in 'Name', with: 'KFC'
       click_button 'Create Restaurant'
-      visit '/'
+      visit '/restaurants'
       click_link 'Review KFC'
       fill_in 'Thoughts', with: 'good'
       select '3', from: 'Rating'
@@ -71,9 +71,7 @@ feature 'User can sign in and out' do
 
      it 'can only leave one review per restaurant' do
        visit '/'
-       click_link 'Review KFC'
-       expect(page).to have_content 'Cannot review this restaurant more than once'
-       expect(current_path).to eq '/'
+       expect(page).not_to have_link 'Review KFC'
      end
   end
 end
