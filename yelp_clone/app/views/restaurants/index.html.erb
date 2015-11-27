@@ -3,6 +3,7 @@
     <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
       <% if restaurant.reviews.any? %>
     <h3>Reviews for <%= restaurant.name %><h3>
+      <h3> Average rating: <%= restaurant.average_rating %></h3>
         <ul>
           <% restaurant.reviews.each do |review| %>
             <li>
